@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Verified from live logo (#f0f046 range) and holding-page CTA (#FCB900 → #FC8600) */
+  --color-bg: #1a1a1a;
+  --color-bg-secondary: #242424;
+  --color-bg-elevated: #2a2a2a;
+  --color-ink: #ffffff;
+  --color-muted: #cccccc;
+  --color-accent: #e8e830;
+  --color-cta: #fc8600;
+  --color-cta-hover: #fcb900;
+  --color-line: rgba(255, 255, 255, 0.12);
+  --header-h: 4.5rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg text-ink font-sans text-body antialiased;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 10% -10%, rgba(232, 232, 48, 0.05), transparent 55%),
+      radial-gradient(ellipse 60% 40% at 100% 0%, rgba(252, 134, 0, 0.04), transparent 50%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-accent) 35%, transparent);
+    color: var(--color-ink);
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display text-ink font-semibold tracking-tight;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  img {
+    @apply max-w-full h-auto;
+  }
+}
+
+@layer components {
+  .site-shell {
+    @apply mx-auto w-full max-w-wide px-gutter;
+  }
+
+  .section-pad {
+    @apply py-section;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-sm font-medium tracking-[0.14em] uppercase text-accent;
+  }
+
+  .eyebrow::before {
+    content: "";
+    @apply block h-px w-6 bg-accent;
+  }
+
+  .lead {
+    @apply max-w-measure text-lead text-muted;
+  }
+
+  .btn {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-md px-5 py-3 text-[0.95rem] font-semibold tracking-wide transition duration-200;
+  }
+
+  .btn-cta {
+    @apply btn bg-cta text-bg hover:bg-cta-hover active:translate-y-px;
+  }
+
+  .btn-ghost {
+    @apply btn border border-line bg-transparent text-ink hover:border-accent hover:text-accent;
+  }
+
+  .btn-phone {
+    @apply btn-cta w-full sm:w-auto;
+  }
+
+  .rule {
+    @apply border-t border-line;
+  }
+
+  .prose-narrow {
+    @apply max-w-measure space-y-4 text-muted;
+  }
+
+  .media-frame {
+    @apply relative overflow-hidden bg-bg-secondary;
+  }
+
+  .media-frame img {
+    @apply h-full w-full object-cover;
+  }
+
+  .nav-link {
+    @apply relative text-[0.95rem] text-muted hover:text-ink;
+  }
+
+  .nav-link[data-active="true"] {
+    @apply text-ink;
+  }
+
+  .nav-link[data-active="true"]::after {
+    content: "";
+    @apply absolute -bottom-1 left-0 h-px w-full bg-accent;
+  }
+
+  .input {
+    @apply w-full rounded-md border border-line bg-bg-secondary px-4 py-3 text-body text-ink;
+  }
+
+  .input::placeholder {
+    color: #999999;
+  }
+
+  .input:focus {
+    border-color: var(--color-accent);
+    outline: none;
+    box-shadow: 0 0 0 1px var(--color-accent);
+  }
+
+  .label {
+    @apply mb-2 block text-sm font-medium text-ink;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
