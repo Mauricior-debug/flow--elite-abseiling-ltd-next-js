@@ -29,18 +29,18 @@ export default function HomePage() {
           />
         </div>
 
-        <div className="site-shell relative flex min-h-[min(92svh,56rem)] flex-col justify-end pb-14 pt-28 sm:pb-20">
+        <div className="site-shell relative flex min-h-[min(92svh,56rem)] flex-col justify-end pb-12 pt-24 sm:pb-20 sm:pt-28">
           <div className="max-w-3xl">
             <p className="eyebrow animate-fade-up">Elite Abseiling Ltd</p>
-            <h1 className="mt-5 text-display animate-fade-up-delay">
+            <h1 className="mt-4 text-display animate-fade-up-delay sm:mt-5">
               Rope access that keeps live buildings working.
             </h1>
-            <p className="lead mt-6 max-w-xl animate-fade-up-late">
+            <p className="lead mt-5 max-w-xl animate-fade-up-late sm:mt-6">
               Industrial rope access for inspections, façades, cleaning, coatings,
               and height safety — delivered by IRATA-qualified technicians across
               the UK.
             </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row animate-fade-up-late">
+            <div className="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row animate-fade-up-late">
               <a href={site.phones[0].href} className="btn-cta">
                 Call {site.phones[0].display}
               </a>

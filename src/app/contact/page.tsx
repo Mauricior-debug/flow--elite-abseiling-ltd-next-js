@@ -64,10 +64,10 @@ export default function ContactPage() {
           </p>
         </div>
 
-        <div className="rounded-md border border-line bg-bg-secondary/50 p-6 sm:p-8">
+        <div className="border border-line bg-bg-secondary p-6 sm:p-8">
           <h2 className="font-display text-2xl text-ink">Request a quote</h2>
           <p className="mt-2 text-muted">
-            Primary action on this page — tell us about the site and we will follow up.
+            Tell us about the site and we will follow up.
           </p>
           <div className="mt-8">
             <ContactForm />
